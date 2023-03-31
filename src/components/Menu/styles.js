@@ -11,18 +11,22 @@ const StyledUl = styled.ul`
     flex-direction: column;
     gap: 15px; 
     font-family: 'League Spartan', sans-serif;
-
+    transform: translateX(${({open})=>open ? 0 : '100%'});
     @media screen and (min-width: 768px){
-        
+        flex-direction: row;
+           border-bottom: 1px solid grey;
     }
-
+    @media screen and (min-width: 1224px){
+           gap: 30px;
+           border-bottom: 1px solid transparent;
+    }
 `
 
 const StyledLink = styled(NavLink)`
     text-decoration: none;
     color: white;
     position: relative;
-
+   
     &::before{
         content: '';
         position: absolute;
@@ -31,7 +35,20 @@ const StyledLink = styled(NavLink)`
         border-radius: 50%;
         left: -40px;
         background-color: grey;
-        
+    @media screen and (min-width: 768px){
+        display: none;
+    }
+
+    @media screen and (min-width: 1224px){
+        display: block;
+        width: 100%;
+        height: 10px;
+        border-radius: 0;
+        top: -55px;
+        left: 0;
+        background-color: transparent;
+    }
+
     }
     &.active::before{
         background-color: ${({ name }) => (COLORS[name.toLowerCase()])};
@@ -47,6 +64,16 @@ const StyledLi = styled.li`
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid grey;
+     @media screen and (min-width: 768px){
+        border-bottom: 1px solid transparent;
+    }
 
 `
-export {StyledUl, StyledLink, StyledLi}
+
+const StyledIcon = styled.img`
+     @media screen and (min-width: 768px){
+        display: none;
+    }
+
+`
+export {StyledUl, StyledLink, StyledLi, StyledIcon}

@@ -1,5 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header/Header";
+
+import Planet from "./pages/Planets";
 import { GlobalStyles } from "./styles/GlobalStyles";
 
 const App = () => {

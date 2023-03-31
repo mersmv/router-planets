@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Menu from "../Menu/Menu"
-import { StyledHeader, StyledHeaderTitle, StyledTotalHeader } from "./styles"
+import { StyledHeader, StyledHeaderTitle, StyledIcon, StyledTotalHeader } from "./styles"
 
 const Header = () => {
     const [open, setOpen] = useState(true)
@@ -8,7 +8,7 @@ const Header = () => {
         <StyledTotalHeader>
             <StyledHeader>
             <StyledHeaderTitle>THE PLANETS</StyledHeaderTitle>
-            <img src="./public/assets/icon-hamburger.svg" alt="" onClick={() => setOpen(!open)}/>
+            <StyledIcon src="./public/assets/icon-hamburger.svg" alt="" onClick={() => setOpen(!open)}/>
             </StyledHeader>
             <Menu open={open}></Menu>
         </StyledTotalHeader>

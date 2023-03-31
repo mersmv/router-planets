@@ -1,14 +1,15 @@
 
 import { PLANETS } from "../../constants/planets"
-import { StyledLi, StyledLink, StyledUl } from "./styles"
+import { StyledIcon, StyledLi, StyledLink, StyledUl } from "./styles"
 
-const Menu = () => {
+const Menu = ({open}) => {
+    
  return (
-        <StyledUl>
-            {PLANETS.map(planet =>(
+        <StyledUl open={open}>
+            {PLANETS.map((planet, index) =>(
                 <StyledLi key={planet.id}>
-                    <StyledLink name={planet.name} to={planet.route}>{planet.name}</StyledLink>
-                    <img src="/assets/icon-chevron.svg" alt="" />
+                    <StyledLink name={planet[index].name} to={planet.route}>{planet.name}</StyledLink>
+                    <StyledIcon src="/assets/icon-chevron.svg" alt="" />
                 </StyledLi>
             ))}
 

@@ -1,6 +1,9 @@
-const Planet = () => {
+import Tabs from "../components/Tabs/Tabs"
+import { COLORS } from "../constants/colors"
+
+const Planet = ({name}) => {
     return (
-<h1></h1>
+        <Tabs color={COLORS[name.toLowerCase()]}/>
     )
 }
 

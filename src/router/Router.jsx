@@ -1,10 +1,15 @@
 import {Routes, Route} from 'react-router-dom';
+import { PLANETS } from '../constants/planets';
 import Planet from '../pages/Planets';
 
 const Router = () => {
     return (
         <Routes>
-            <Route path='/' element={<Planet}/>
+            {PLANETS.map(planet =>(
+                <Route path={planet.route} element={<Planet {...planet}/>}/>
+            ))}
+            
+
         </Routes>
     )
 }
